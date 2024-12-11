@@ -1,4 +1,4 @@
-import { View, FlatList } from "react-native";
+import { View, FlatList, ScrollView } from "react-native";
 import { Category } from "../category";
 import { styles } from "./styles";
 
@@ -28,12 +28,9 @@ export function Categories({ data, selected, onSelect }: Props) {
       )}
       horizontal // posiciona os nomes na horizontal
       showsHorizontalScrollIndicator={false} // elimina a barrinha de rolagem
-      scrollToOverflowEnabled={true}
       contentContainerStyle={styles.content}
       style={styles.container}
-      initialNumToRender={data.length}
-      windowSize={10}
-      removeClippedSubviews={false}
+      scrollEnabled={true} // Habilita o scroll
     />
   );
 }
